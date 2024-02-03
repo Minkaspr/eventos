@@ -21,6 +21,7 @@
                 <th>Descripción</th>
                 <th>Asistentes</th>
                 <th>Cancelado</th>
+                <th colspan="2">Operaciones</th>
             </tr>
         </thead>
         <tbody>
@@ -33,6 +34,8 @@
                 <td th:text="${evento.descripcion}"></td>
                 <td th:text="${evento.asistentes}"></td>
                 <td th:text="${evento.cancelado} ? 'si' : 'no'"></td>
+                <td><a th:href="@{/Eventos/editar/{id}(id=${evento.idEvento})}">Editar</a></td>
+                <td><a th:href="@{/Eventos/eliminar/{id}(id=${evento.idEvento})}">Eliminar</a></td>
             </tr>
         </tbody>
     </table>
