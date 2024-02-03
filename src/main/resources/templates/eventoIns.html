@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agregar Eventos</title>
+</head>
+<body>
+    <a href="/Eventos">Atras</a>
+    <h1>Nuevo Evento</h1>
+    <form th:object="${evento}" th:action="${accion}">
+        <label>Nombre: <input type="text" th:field="*{nombre}" /></label></br>
+        <label>Fecha: <input type="date" th:field="*{fecha}" /></label>
+        <label>Hora: <input type="time" th:field="*{hora}" /></label>
+        <label>Lugar: <input type="text" th:field="*{lugar}" /></label>
+        <label>Descripción: <input type="text" th:field="*{descripcion}" /></label>
+        <label>Asistentes: <input type="number" th:field="*{asistentes}" /></label>
+        <label>Cancelado: <input type="checkbox" th:field="*{cancelado}" /></label>
+
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

@@ -5,9 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Eventos</title>
 </head>
 <body>
+    <a href="/Eventos/nuevo">Nuevo Evento</a>
     <h1>Lista de eventos</h1>
     <table>
         <thead>
@@ -24,17 +25,16 @@
         </thead>
         <tbody>
             <tr th:each="evento : ${eventosLis}">
-                <td th:text="${evento.id}"></td>
+                <td th:text="${evento.idEvento}"></td>
                 <td th:text="${evento.nombre}"></td>
-                <td th:text="${evento.fecha}"></td>
-                <td th:text="${evento.hora}"></td>
+                <td th:text="${#temporals.format(evento.fecha, 'dd/MM/yyyy')}"></td>
+                <td th:text="${#temporals.format(evento.hora, 'hh:mm a')}"></td>
                 <td th:text="${evento.lugar}"></td>
                 <td th:text="${evento.descripcion}"></td>
                 <td th:text="${evento.asistentes}"></td>
-                <td th:text="${evento.cancelado}"></td>
+                <td th:text="${evento.cancelado} ? 'si' : 'no'"></td>
             </tr>
         </tbody>
-
     </table>
 </body>
 </html>

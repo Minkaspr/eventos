@@ -17,10 +17,12 @@ public class EventoController {
     @Autowired
     private EventoService eventoService;
 
-    @GetMapping()
+    @GetMapping
     public String listarEventos(Model model){
-        List<Evento> eventoList = eventoService.obtenerTodo();
-        model.addAttribute("eventosLis", eventoList);
-        return "eventoSel";
+        List<Evento> eventosLis = eventoService.obtenerTodo();
+        model.addAttribute("eventosLis", eventosLis);
+        return "eventoSel.html";
     }
+
+    
 }
